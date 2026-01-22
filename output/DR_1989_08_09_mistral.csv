@@ -1,0 +1,7 @@
+Daniel  Reyes,8/9/1989,"I canâ€™t stop worrying about everythingâ€”work, my health, my family, even things that donâ€™t really make sense. Itâ€™s like my brain never turns off. Iâ€™m always on edge and Iâ€™ve been having trouble sleeping because of racing thoughts. Sometimes I even feel short of breath or dizzy when it gets really bad.","The patient presents with symptoms indicative of Generalized Anxiety Disorder (GAD), majorly characterized by excessive, persistent worry and anxiety about a number of events or activities. Additionally, the high PHQ-4 score suggests comorbid Major Depressive Disorder (MDD) due to the presence of depressive symptoms. Insomnia, racing thoughts, heightened physiological responses like shortness of breath and dizziness further support these diagnoses. Further evaluation and clinical assessment are recommended for a definitive diagnosis and treatment planning."
+assessment name,total score,q1 score,q2 score,q3 score,q4 score,q5 score,q6 score,q7 score,q8 score,q9 score,q10 score,q11 score,q12 score,q13 score,q14 score,q15 score,q16 score,q17 score,q18 score,q19 score,q20 score,q21 score,q22 score
+PHQ-4,12,3,3,3,3,,,,,,,,,,,,,,,,,,
+GAD-7,21,3,3,3,3,3,3,3,,,,,,,,,,,,,,,
+IES-R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+PCL-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,
+SPIN,59,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,,,,,

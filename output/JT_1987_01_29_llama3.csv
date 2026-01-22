@@ -1,0 +1,9 @@
+Jason  Thompson,1/29/1987,"There are times I feel unstoppableâ€”like I barely need sleep, my thoughts race, I make big plans and spend a lot of money. I feel amazing. But then it crashes. I end up depressed for weeks, canâ€™t get out of bed, donâ€™t answer my phone. Itâ€™s like Iâ€™m two completely different people.","Based on the patient's self-report and inventory scores, my diagnostic impression is that this individual may be experiencing symptoms of bipolar disorder, specifically type I or II, characterized by periods of mania/hypomania followed by depressive episodes. The reports of grandiose feelings, increased energy, and impulsive behaviors during manic phases are consistent with this diagnosis. Additionally, the contrast between these episodes and subsequent depressive phases suggests a cyclical pattern of mood instability, which is a hallmark feature of bipolar disorder."
+assessment name,total score,q1 score,q2 score,q3 score,q4 score,q5 score,q6 score,q7 score,q8 score,q9 score,q10 score,q11 score,q12 score,q13 score,q14 score,q15 score,q16 score,q17 score,q18 score,q19 score,q20 score,q21 score
+PHQ-4,12,3,3,3,3,,,,,,,,,,,,,,,,,
+ASRS v1.1,4,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,,,
+BDI-II,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+DAST-10,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,
+GAD-7,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
+PCL-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+PHQ-9,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,

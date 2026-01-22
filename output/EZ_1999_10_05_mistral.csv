@@ -1,0 +1,8 @@
+Elena  Zhou,10/5/1999,"Iâ€™ve always felt like I donâ€™t really understand people the way they understand each other. Social situations are exhausting and confusing. I have specific routines and interests that keep me grounded, and when they get disrupted, I get overwhelmed. Iâ€™m good at my job, but I constantly feel out of place and misunderstood.","Based on the patient's self-report and inventory scores, there is a high likelihood of Autism Spectrum Disorder (ASD). The patient's difficulty understanding social cues, feelings of being out of place in social situations, and specific routines or interests suggest symptoms consistent with ASD. However, it is important to note that further evaluation may be necessary for a definitive diagnosis. Additionally, the low scores on anxiety (GAD-7), mood (PHQ-9), depression (PHQ-4), obsessive-compulsive traits (OCI-R), psychosis (MDQ), and posttraumatic stress disorder symptoms (PDSS-SR) suggest that these conditions are not currently prominent in the patient's presentation."
+assessment name,total score,q1 score,q2 score,q3 score,q4 score,q5 score,q6 score,q7 score,q8 score,q9 score,q10 score,q11 score,q12 score,q13 score,q14 score,q15 score,q16 score,q17 score,q18 score
+PHQ-4,12,3,3,3,3,,,,,,,,,,,,,,
+GAD-7,0,0,0,0,0,0,0,0,,,,,,,,,,,
+MDQ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+OCI-R,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+PDSS-SR,0,0,0,0,0,0,0,0,,,,,,,,,,,
+PHQ-9,0,0,0,0,0,0,0,0,0,0,,,,,,,,,

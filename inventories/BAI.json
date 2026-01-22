@@ -1,0 +1,216 @@
+{
+  "title": "BAI",
+  "instructions": "Please read each item and indicate how much you have been bothered by that symptom during the past week.",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Numbness or tingling",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Feeling hot",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Wobbliness in legs",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Unable to relax",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Fear of worst happening",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Dizzy or lightheaded",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Heart pounding / racing",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Unsteady",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 9,
+      "text": "Terrified or afraid",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 10,
+      "text": "Nervous",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 11,
+      "text": "Feeling of choking",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 12,
+      "text": "Hands trembling",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 13,
+      "text": "Shaky / unsteady",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 14,
+      "text": "Fear of losing control",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 15,
+      "text": "Difficulty in breathing",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 16,
+      "text": "Fear of dying",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 17,
+      "text": "Scared",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 18,
+      "text": "Indigestion",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 19,
+      "text": "Faint / lightheaded",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 20,
+      "text": "Face flushed",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    },
+    {
+      "id": 21,
+      "text": "Hot / cold sweats",
+      "options": [
+        {"label": "Not at all", "value": 0},
+        {"label": "Mildly", "value": 1},
+        {"label": "Moderately", "value": 2},
+        {"label": "Severely", "value": 3}
+      ]
+    }
+  ]
+}

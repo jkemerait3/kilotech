@@ -1,0 +1,391 @@
+{
+  "title": "QIDS-SR-16",
+  "instructions": "Check the 1 response to each item that best describes you for the past 7 days.",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Falling asleep",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Sleep during the night",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Waking up too early",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Sleeping too much",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Feeling sad",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Decreased interest in activities",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Feeling slowed down",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Feeling restless",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "Feeling tired or low on energy",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "Feeling guilty or worthless",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "text": "Trouble concentrating",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "text": "Thinking of death or suicide",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "text": "Change in appetite",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "text": "Weight gain",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "text": "Weight loss",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "text": "Psychomotor agitation or retardation",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "total_range": [
+      0,
+      27
+    ],
+    "interpretation": [
+      {
+        "min": 0,
+        "max": 5,
+        "label": "Normal"
+      },
+      {
+        "min": 6,
+        "max": 10,
+        "label": "Mild Depression"
+      },
+      {
+        "min": 11,
+        "max": 15,
+        "label": "Moderate Depression"
+      },
+      {
+        "min": 16,
+        "max": 20,
+        "label": "Severe Depression"
+      },
+      {
+        "min": 21,
+        "max": 27,
+        "label": "Very Severe Depression"
+      }
+    ]
+  }
+}

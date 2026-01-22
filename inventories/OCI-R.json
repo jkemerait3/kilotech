@@ -1,0 +1,491 @@
+{
+  "title": "OCI-R",
+  "questions": [
+    {
+      "id": 1,
+      "text": "I have saved up so many things that they get in the way.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "I check things more often than necessary.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "I get upset if objects are not arranged properly.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "I feel compelled to count while I am doing things.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "I find it difficult to touch an object when I know it has been touched by strangers or certain people.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "I find it difficult to control my own thoughts.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "I collect things I don\u2019t need.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "I repeatedly check doors, windows, drawers, etc.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "I get upset if others change the way I have arranged things.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "I feel I have to repeat certain numbers.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "text": "I sometimes have to wash or clean myself simply because I feel contaminated.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "text": "I am upset by unpleasant thoughts that come into my mind against my will.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "text": "I avoid throwing things away because I am afraid I might need them later.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "text": "I repeatedly check gas and water taps and light switches after turning them off.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "text": "I need things to be arranged in a particular way.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "text": "I feel that there are good and bad numbers.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "text": "I wash my hands more often and longer than necessary.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "text": "I frequently get nasty thoughts and have difficulty in getting rid of them.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "total_range": [
+      0,
+      72
+    ],
+    "interpretation": [
+      {
+        "min": 0,
+        "max": 20,
+        "label": "Below OCD threshold"
+      },
+      {
+        "min": 21,
+        "max": 72,
+        "label": "Possible OCD - Further Evaluation Recommended"
+      }
+    ]
+  }
+}

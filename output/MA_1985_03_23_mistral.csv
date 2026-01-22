@@ -1,0 +1,7 @@
+Marcus  Allen,3/23/1985,"Iâ€™ve been drinking a lot more than I used to. At first it was just on weekends, but now I need a drink just to get through the day. Iâ€™ve been missing work, getting into arguments with my partner, and I know itâ€™s getting out of handâ€”but I donâ€™t know how to stop. I tried cutting back and couldnâ€™t.","Based on the clinical context and self-report, the patient appears to be experiencing signs of alcohol use disorder. The elevated AUDIT (Alcohol Use Disorders Identification Test) score suggests heavy alcohol consumption that is causing functional impairment in various areas of life, such as work and relationships. Despite attempts to reduce drinking, the patient has been unable to do so, indicating potential dependence. Further assessment and appropriate intervention are recommended."
+assessment name,total score,q1 score,q2 score,q3 score,q4 score,q5 score,q6 score,q7 score,q8 score,q9 score,q10 score,q11 score,q12 score,q13 score,q14 score,q15 score,q16 score,q17 score,q18 score,q19 score,q20 score,q21 score
+PHQ-4,12,3,3,3,3,,,,,,,,,,,,,,,,,
+AUDIT,40,4,4,4,4,4,4,4,4,4,4,,,,,,,,,,,
+PDSS-SR,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
+GAD-7,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
+BDI-II,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

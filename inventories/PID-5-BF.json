@@ -1,0 +1,408 @@
+{
+  "title": "PID-5-BF",
+  "questions": [
+    {
+      "id": 1,
+      "text": "People would describe me as reckless.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "I feel like I act totally on impulse.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Even though I know better, I can't stop making rash decisions.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "I often feel like nothing I do really matters.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Others see me as irresponsible.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "I'm not good at planning ahead.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "My thoughts often don't make sense to others.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "I worry about almost everything.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "I get emotional easily, often for very little reason.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "I fear being alone in life more than anything else.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "text": "I get stuck on one way of doing things, even when it's clearly not working.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "text": "I have seen things that weren\u2019t really there.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "text": "I steer clear of romantic relationships.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "text": "I'm not interested in making friends.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "text": "I get irritated easily by all sorts of things.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "text": "I don\u2019t like to get too close to people.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "text": "It\u2019s no big deal if I hurt other people\u2019s feelings.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "text": "I rarely get enthusiastic about anything.",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "total_range": [
+      0,
+      54
+    ],
+    "interpretation": []
+  }
+}

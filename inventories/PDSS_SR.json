@@ -1,0 +1,194 @@
+{
+  "title": "PDSS-SR",
+  "questions": [
+    {
+      "id": 1,
+      "text": "How many panic and limited symptom attacks did you have during the week?",
+      "options": [
+        {
+          "label": "No episodes",
+          "value": 0
+        },
+        {
+          "label": "Mild",
+          "value": 1
+        },
+        {
+          "label": "Moderate",
+          "value": 2
+        },
+        {
+          "label": "Severe",
+          "value": 3
+        },
+        {
+          "label": "Extreme",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "How distressing were they while happening?",
+      "options": [
+        {
+          "label": "No episodes",
+          "value": 0
+        },
+        {
+          "label": "Mild",
+          "value": 1
+        },
+        {
+          "label": "Moderate",
+          "value": 2
+        },
+        {
+          "label": "Severe",
+          "value": 3
+        },
+        {
+          "label": "Extreme",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "How much have you worried or felt anxious about future panic attacks?",
+      "options": [
+        {
+          "label": "No episodes",
+          "value": 0
+        },
+        {
+          "label": "Mild",
+          "value": 1
+        },
+        {
+          "label": "Moderate",
+          "value": 2
+        },
+        {
+          "label": "Severe",
+          "value": 3
+        },
+        {
+          "label": "Extreme",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Were there places or situations you avoided due to fear of panic attacks?",
+      "options": [
+        {
+          "label": "No episodes",
+          "value": 0
+        },
+        {
+          "label": "Mild",
+          "value": 1
+        },
+        {
+          "label": "Moderate",
+          "value": 2
+        },
+        {
+          "label": "Severe",
+          "value": 3
+        },
+        {
+          "label": "Extreme",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Were there activities you avoided due to fear they might trigger a panic attack?",
+      "options": [
+        {
+          "label": "No episodes",
+          "value": 0
+        },
+        {
+          "label": "Mild",
+          "value": 1
+        },
+        {
+          "label": "Moderate",
+          "value": 2
+        },
+        {
+          "label": "Severe",
+          "value": 3
+        },
+        {
+          "label": "Extreme",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "To what extent have panic or limited symptom attacks caused interference in your daily functioning?",
+      "options": [
+        {
+          "label": "No episodes",
+          "value": 0
+        },
+        {
+          "label": "Mild",
+          "value": 1
+        },
+        {
+          "label": "Moderate",
+          "value": 2
+        },
+        {
+          "label": "Severe",
+          "value": 3
+        },
+        {
+          "label": "Extreme",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "How much did these attacks impair your social or occupational life?",
+      "options": [
+        {
+          "label": "No episodes",
+          "value": 0
+        },
+        {
+          "label": "Mild",
+          "value": 1
+        },
+        {
+          "label": "Moderate",
+          "value": 2
+        },
+        {
+          "label": "Severe",
+          "value": 3
+        },
+        {
+          "label": "Extreme",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "total_range": [
+      0,
+      28
+    ],
+    "interpretation": []
+  }
+}

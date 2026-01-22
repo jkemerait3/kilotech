@@ -1,0 +1,314 @@
+{
+  "title": "DES-II",
+  "instructions": "Please circle the number to show what percentage of the time this happens to you.",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Some people have the experience of driving or riding in a car or bus or subway and suddenly realizing that they don’t remember what has happened during all or part of the trip.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Some people find that sometimes they are listening to someone talk and they suddenly realize that they did not hear part or all of what was said.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Some people have the experience of finding themselves in a place and have no idea how they got there.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Some people have the experience of finding themselves dressed in clothes that they don’t remember putting on.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Some people have the experience of finding new things among their belongings that they do not remember buying.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Some people sometimes find that they are approached by people that they do not know, who call them by another name or insist that they have met them before.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Some people sometimes have the experience of feeling as though they are standing next to themselves or watching themselves do something and they actually see themselves as if they were looking at another person.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Some people are told that they sometimes do not recognize friends or family members.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 9,
+      "text": "Some people find that they have no memory for some important events in their lives (for example, a wedding or graduation).",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 10,
+      "text": "Some people have the experience of being accused of lying when they do not think that they have lied.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 11,
+      "text": "Some people have the experience of looking in a mirror and not recognizing themselves.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 12,
+      "text": "Some people have the experience of feeling that other people, objects, and the world around them are not real.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 13,
+      "text": "Some people have the experience of feeling that their body does not seem to belong to them.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 14,
+      "text": "Some people have the experience of sometimes remembering a past event so vividly that they feel as if they were reliving that event.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 15,
+      "text": "Some people have the experience of not being sure whether things that they remember happening really did happen or whether they just dreamed them.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 16,
+      "text": "Some people have the experience of being in a familiar place but finding it strange and unfamiliar.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 17,
+      "text": "Some people find that when they are watching television or a movie they become so absorbed in the story that they are unaware of other events happening around them.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 18,
+      "text": "Some people find that they become so involved in a fantasy or daydream that it feels as though it were really happening to them.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 19,
+      "text": "Some people find that they sometimes are able to ignore pain.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 20,
+      "text": "Some people find that they sometimes sit staring off into space, thinking of nothing, and are not aware of the passage of time.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 21,
+      "text": "Some people sometimes find that when they are alone they talk out loud to themselves.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 22,
+      "text": "Some people find that in one situation they may act so differently compared with another situation that they feel almost as if they were two different people.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 23,
+      "text": "Some people sometimes find that in certain situations they are able to do things with amazing ease and spontaneity that would usually be difficult for them (for example, sports, work, social situations, etc.).",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 24,
+      "text": "Some people sometimes find that they cannot remember whether they have done something or have just thought about doing that thing (for example, not knowing whether they have just mailed a letter or have just thought about mailing it).",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 25,
+      "text": "Some people find evidence that they have done things that they do not remember doing.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 26,
+      "text": "Some people sometimes find writings, drawings, or notes among their belongings that they must have done but cannot remember doing.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 27,
+      "text": "Some people sometimes find that they hear voices inside their head that tell them to do things or comment on things that they are doing.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    },
+    {
+      "id": 28,
+      "text": "Some people sometimes feel as if they are looking at the world through a fog, so that people and objects appear far away or unclear.",
+      "options": [
+        {"label": "0%", "value": 0},
+        {"label": "25%", "value": 1},
+        {"label": "50%", "value": 2},
+        {"label": "75%", "value": 3},
+        {"label": "100%", "value": 4}
+      ]
+    }
+  ]
+}

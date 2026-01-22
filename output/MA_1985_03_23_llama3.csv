@@ -1,0 +1,7 @@
+Marcus  Allen,3/23/1985,"Iâ€™ve been drinking a lot more than I used to. At first it was just on weekends, but now I need a drink just to get through the day. Iâ€™ve been missing work, getting into arguments with my partner, and I know itâ€™s getting out of handâ€”but I donâ€™t know how to stop. I tried cutting back and couldnâ€™t.","Based on the clinical context, self-report, and inventory scores, a diagnostic impression is that the patient is experiencing a significant depressive episode with symptoms of increased substance use (alcohol) as a maladaptive coping mechanism. The patient's report of needing to drink to get through the day, missing work, and difficulty cutting back suggests a pattern of alcohol dependence or abuse. Additionally, the lack of reported anxiety symptoms (PHQ-9: 0; PCL-5: 0) suggests that the primary distress is related to depression rather than anxiety."
+assessment name,total score,q1 score,q2 score,q3 score,q4 score,q5 score,q6 score,q7 score,q8 score,q9 score,q10 score,q11 score,q12 score,q13 score,q14 score,q15 score,q16 score,q17 score,q18 score,q19 score,q20 score
+PHQ-4,12,3,3,3,3,,,,,,,,,,,,,,,,
+AUDIT,4,4,,,,,,,,,,,,,,,,,,,
+DAST-10,1,1,,,,,,,,,,,,,,,,,,,
+PHQ-9,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,
+PCL-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

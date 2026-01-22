@@ -1,0 +1,52 @@
+{
+  "title": "ACE-Q",
+  "instructions": "Please answer the following questions about your childhood experiences.",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Did a parent or other adult in the household often swear at you, insult you, put you down, or humiliate you?",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Did a parent or other adult in the household often push, grab, slap, or throw something at you?",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "total_range": [
+      0,
+      10
+    ],
+    "interpretation": [
+      {
+        "min": 0,
+        "max": 3,
+        "label": "Low risk"
+      },
+      {
+        "min": 4,
+        "max": 10,
+        "label": "High risk"
+      }
+    ]
+  }
+}

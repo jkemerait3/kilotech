@@ -1,0 +1,222 @@
+{
+  "title": "PQ-B",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Have you felt that your thoughts are being interfered with or that others are inserting thoughts into your head?",
+      "options": [
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "Yes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Have you seen visions or heard voices that others do not see or hear?",
+      "options": [
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "Yes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Have you felt that others are watching you or following you?",
+      "options": [
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "Yes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Have you had unusual experiences with the way things look, sound, or feel?",
+      "options": [
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "Yes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Have you had difficulty organizing your thoughts or communicating clearly?",
+      "options": [
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "Yes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Have you had suspicions or distrust about people\u2019s intentions without good reason?",
+      "options": [
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "Yes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Have you felt that people can read your mind or hear your thoughts?",
+      "options": [
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "Yes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Have you had experiences that made you think you might be going crazy?",
+      "options": [
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "Yes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "Have you felt that things in your environment have special meaning for you?",
+      "options": [
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "Yes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "Have you had ideas or beliefs that others found strange or hard to understand?",
+      "options": [
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "Yes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "text": "Have you felt confused about what is real and what is imaginary?",
+      "options": [
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "Yes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "text": "Have you felt that your mind was playing tricks on you?",
+      "options": [
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "Yes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "text": "Have you been bothered by thoughts that you couldn\u2019t get out of your head?",
+      "options": [
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "Yes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "text": "Have you been more sensitive to sounds, lights, or other things than usual?",
+      "options": [
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "Yes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "text": "Have you had a significant drop in functioning in work, school, or social settings?",
+      "options": [
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "Yes",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "total_range": [
+      0,
+      15
+    ],
+    "interpretation": []
+  }
+}

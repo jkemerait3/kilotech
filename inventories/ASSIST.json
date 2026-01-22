@@ -1,0 +1,85 @@
+{
+  "title": "ASSIST",
+  "instructions": "Answer the following questions about your use of substances.",
+  "questions": [
+    {
+      "id": 1,
+      "text": "In your lifetime, which of the following substances have you ever used?",
+      "options": [
+        {"label": "Yes", "value": 1},
+        {"label": "No", "value": 0}
+      ]
+    },
+    {
+      "id": 2,
+      "text": "In the past three months, how often have you used the substances you mentioned?",
+      "options": [
+        {"label": "Never", "value": 0},
+        {"label": "Once or twice", "value": 2},
+        {"label": "Monthly", "value": 3},
+        {"label": "Weekly", "value": 4},
+        {"label": "Daily or almost daily", "value": 6}
+      ]
+    },
+    {
+      "id": 3,
+      "text": "During the past three months, how often have you had a strong desire or urge to use these substances?",
+      "options": [
+        {"label": "Never", "value": 0},
+        {"label": "Once or twice", "value": 3},
+        {"label": "Monthly", "value": 4},
+        {"label": "Weekly", "value": 5},
+        {"label": "Daily or almost daily", "value": 6}
+      ]
+    },
+    {
+      "id": 4,
+      "text": "During the past three months, how often has your use of these substances led to health, social, legal or financial problems?",
+      "options": [
+        {"label": "Never", "value": 0},
+        {"label": "Once or twice", "value": 4},
+        {"label": "Monthly", "value": 5},
+        {"label": "Weekly", "value": 6},
+        {"label": "Daily or almost daily", "value": 7}
+      ]
+    },
+    {
+      "id": 5,
+      "text": "During the past three months, how often have you failed to do what was normally expected of you because of your use of these substances?",
+      "options": [
+        {"label": "Never", "value": 0},
+        {"label": "Once or twice", "value": 5},
+        {"label": "Monthly", "value": 6},
+        {"label": "Weekly", "value": 7},
+        {"label": "Daily or almost daily", "value": 8}
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Has a friend or relative or anyone else ever expressed concern about your use of these substances?",
+      "options": [
+        {"label": "No, never", "value": 0},
+        {"label": "Yes, in the past 3 months", "value": 6},
+        {"label": "Yes, but not in the past 3 months", "value": 3}
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Have you ever tried and failed to control, cut down, or stop using these substances?",
+      "options": [
+        {"label": "No, never", "value": 0},
+        {"label": "Yes, in the past 3 months", "value": 6},
+        {"label": "Yes, but not in the past 3 months", "value": 3}
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Have you ever used any drug by injection? (NON-MEDICAL USE ONLY)",
+      "options": [
+        {"label": "No, never", "value": 0},
+        {"label": "Yes, in the past 3 months", "value": 6},
+        {"label": "Yes, but not in the past 3 months", "value": 3}
+      ]
+    }
+  ]
+}

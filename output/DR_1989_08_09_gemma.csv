@@ -1,0 +1,6 @@
+Daniel  Reyes,8/9/1989,"I canâ€™t stop worrying about everythingâ€”work, my health, my family, even things that donâ€™t really make sense. Itâ€™s like my brain never turns off. Iâ€™m always on edge and Iâ€™ve been having trouble sleeping because of racing thoughts. Sometimes I even feel short of breath or dizzy when it gets really bad.","Based on the patient's clinical context, self-report, and administered inventory scores, a diagnosis of Generalized Anxiety Disorder (GAD) with potential underlying hypervigilance is likely."
+assessment name,total score,q1 score,q2 score,q3 score,q4 score,q5 score,q6 score,q7 score,q8 score,q9 score,q10 score,q11 score,q12 score,q13 score,q14 score,q15 score,q16 score,q17 score,q18 score,q19 score,q20 score,q21 score
+PHQ-4,12,3,3,3,3,,,,,,,,,,,,,,,,,
+GAD-7,21,3,3,3,3,3,3,3,,,,,,,,,,,,,,
+BDI-II,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SPIN,64,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,,,,

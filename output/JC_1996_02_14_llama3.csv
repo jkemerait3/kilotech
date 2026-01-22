@@ -1,0 +1,8 @@
+Jasmine Cole,2/14/1996,"Iâ€™ve always struggled with paying attention, but now that Iâ€™m in a full-time job, itâ€™s worse. I lose track of tasks constantly, I get distracted by the smallest things, and I have a really hard time finishing projects. I feel like Iâ€™m always behind and letting people down, even when I try really hard.","Based on the clinical context, self-report, and inventory scores, I would formulate a diagnostic impression as follows:
+
+This individual appears to be experiencing significant difficulties with attentional control, resulting in frequent difficulties with task completion, organization, and time management. They report being easily distracted and struggling to maintain focus, which is further exacerbated by feelings of stress, anxiety, and self-doubt. The presence of these symptoms across multiple domains suggests a pervasive impact on daily functioning, potentially impacting work performance, relationships, and overall well-being."
+assessment name,total score,q1 score,q2 score,q3 score,q4 score,q5 score,q6 score,q7 score,q8 score,q9 score,q10 score,q11 score,q12 score,q13 score,q14 score,q15 score,q16 score,q17 score,q18 score,q19 score,q20 score
+PHQ-4,12,3,3,3,3,,,,,,,,,,,,,,,,
+ASRS v1.1,72,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,,
+PCL-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+QIDS-SR-16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,

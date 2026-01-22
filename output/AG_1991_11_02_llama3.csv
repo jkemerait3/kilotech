@@ -1,0 +1,9 @@
+Alicia  Grant,11/2/1991,"I was in a serious car accident last year and I still think about it almost every day. I get flashbacks whenever I hear loud crashes or see a similar car. I canâ€™t drive anymore. I avoid that whole part of town. At night, I have nightmares and I wake up sweating and panicking. I feel disconnected from people, even my family.","Based on the patient's self-report and inventory scores, I formulate a diagnostic impression as follows:
+
+This individual is likely experiencing symptoms of post-traumatic stress disorder (PTSD) following a severe traumatic event, specifically a car accident. The persistent intrusive thoughts and flashbacks, avoidance behaviors, and altered sleep patterns are indicative of PTSD. Furthermore, the patient's reported feelings of emotional numbing and detachment from others suggest that they may also be struggling with symptoms of depression."
+assessment name,total score,q1 score,q2 score,q3 score,q4 score,q5 score,q6 score,q7 score,q8 score,q9 score,q10 score,q11 score,q12 score,q13 score,q14 score,q15 score,q16 score,q17 score,q18 score,q19 score,q20 score,q21 score,q22 score
+PHQ-4,12,3,3,3,3,,,,,,,,,,,,,,,,,,
+IES-R,88,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+PCL-5,80,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,,
+QIDS-SR-16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,
+ASRS v1.1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,

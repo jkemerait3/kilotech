@@ -1,0 +1,6 @@
+Sarah  Mitchell,5/17/1994,"Lately, Iâ€™ve just been feeling really down. Iâ€™m tired all the time, even after sleeping for hours. Iâ€™ve lost interest in the things I used to enjoy like painting or going out with friends. I find myself crying randomly and I just feel hopeless. It's been like this for weeks and Iâ€™m starting to wonder if thereâ€™s something seriously wrong with me.","Based on the clinical context, self-report, and inventory scores, my diagnostic impression is that this patient is likely experiencing a significant depressive episode, characterized by symptoms of fatigue, anhedonia, feelings of hopelessness, and dysphoria. The high score on the BDI-II suggests a substantial impact on daily functioning, with decreased interest in activities and persistent sadness."
+assessment name,total score,q1 score,q2 score,q3 score,q4 score,q5 score,q6 score,q7 score,q8 score,q9 score,q10 score,q11 score,q12 score,q13 score,q14 score,q15 score,q16 score,q17 score,q18 score,q19 score,q20 score,q21 score
+PHQ-4,12,3,3,3,3,,,,,,,,,,,,,,,,,
+BDI-II,63,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+GAD-7,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
+PHQ-9,27,3,3,3,3,3,3,3,3,3,,,,,,,,,,,,

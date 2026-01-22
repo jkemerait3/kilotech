@@ -1,0 +1,86 @@
+{
+  "title": "DAST-10",
+  "instructions": "Answer Yes or No to the following questions regarding drug use (excluding alcohol and tobacco) in the past 12 months.",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Have you used drugs other than those required for medical reasons?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Do you abuse more than one drug at a time?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Are you always able to stop using drugs when you want to? (If you never use drugs, answer 'Yes')",
+      "options": [
+        {"label": "Yes", "value": 0},
+        {"label": "No", "value": 1}
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Have you had 'blackouts' or 'flashbacks' as a result of drug use?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Do you ever feel bad or guilty about your drug use? (If you never use drugs, choose 'No')",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Does your spouse (or parents) ever complain about your involvement with drugs?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Have you neglected your family because of your use of drugs?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Have you engaged in illegal activities in order to obtain drugs?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 9,
+      "text": "Have you ever experienced withdrawal symptoms (felt sick) when you stopped taking drugs?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 10,
+      "text": "Have you had medical problems as a result of your drug use (e.g., memory loss, hepatitis, convulsions, bleeding, etc.)?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    }
+  ]
+}

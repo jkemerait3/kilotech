@@ -1,0 +1,7 @@
+Alicia  Grant,11/2/1991,"I was in a serious car accident last year and I still think about it almost every day. I get flashbacks whenever I hear loud crashes or see a similar car. I canâ€™t drive anymore. I avoid that whole part of town. At night, I have nightmares and I wake up sweating and panicking. I feel disconnected from people, even my family.","Based on the patient's self-report and the inventory scores, a probable diagnosis of Post-Traumatic Stress Disorder (PTSD) is suggested. The patient's persistent thoughts about a traumatic event, flashbacks, avoidance of reminders of the accident, disturbing dreams, and feelings of detachment indicate PTSD symptoms. The low scores on PHQ-9, PDSS-SR, and PID-5-BF suggest that the patient does not have significant depressive or antisocial tendencies, or anxiety symptoms other than PTSD."
+assessment name,total score,q1 score,q2 score,q3 score,q4 score,q5 score,q6 score,q7 score,q8 score,q9 score,q10 score,q11 score,q12 score,q13 score,q14 score,q15 score,q16 score,q17 score,q18 score,q19 score,q20 score,q21 score,q22 score
+PHQ-4,12,3,3,3,3,,,,,,,,,,,,,,,,,,
+IES-R,88,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+PDSS-SR,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,,
+PHQ-9,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,
+PID-5-BF,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,

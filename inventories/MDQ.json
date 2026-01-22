@@ -1,0 +1,154 @@
+{
+  "title": "MDQ",
+  "instructions": "Please answer each question as best you can by checking Yes or No.",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Felt so good or so hyper that other people thought you were not your normal self or you got into trouble?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Were so irritable that you shouted at people or started fights or arguments?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Felt much more self-confident than usual?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Got much less sleep than usual and didn’t really miss it?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Were much more talkative or spoke faster than usual?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Had thoughts racing through your head or couldn’t slow your mind down?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Were so easily distracted that you had trouble concentrating or staying on track?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Had much more energy than usual?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 9,
+      "text": "Were much more active or did many more things than usual?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 10,
+      "text": "Were much more social or outgoing than usual (e.g., telephoning friends in the middle of the night)?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 11,
+      "text": "Were much more interested in sex than usual?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 12,
+      "text": "Did things that were unusual or that others thought were excessive, foolish, or risky?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 13,
+      "text": "Spending money got you or your family into trouble?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 14,
+      "text": "Did several of these occur during the same time period?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 15,
+      "text": "How much of a problem did these cause you (work, relationships, etc.)?",
+      "options": [
+        {"label": "No problem", "value": 0},
+        {"label": "Minor problem", "value": 1},
+        {"label": "Moderate problem", "value": 2},
+        {"label": "Serious problem", "value": 3}
+      ]
+    },
+    {
+      "id": 16,
+      "text": "Any blood relatives diagnosed with manic-depressive illness or bipolar disorder?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    },
+    {
+      "id": 17,
+      "text": "Have you ever been diagnosed with manic-depressive illness or bipolar disorder?",
+      "options": [
+        {"label": "No", "value": 0},
+        {"label": "Yes", "value": 1}
+      ]
+    }
+  ],
+  "scoring": {
+    "total_range": [0, 13],
+    "interpretation": [
+      {
+        "min": 7,
+        "max": 13,
+        "label": "Possible bipolar disorder (further evaluation recommended)"
+      }
+    ]
+  }
+}

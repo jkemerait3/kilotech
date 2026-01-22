@@ -1,0 +1,533 @@
+{
+  "title": "PCL-5",
+  "instructions": " Below is a list of problems that people sometimes have in response to a very stressful experience. Keeping your worst event in mind, please read each problem carefully and then select one of the numbers to the right to indicate how much you have been bothered by that problem in the past month.",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Repeated, disturbing, and unwanted memories of the stressful experience?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Repeated, disturbing dreams of the stressful experience?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Suddenly feeling or acting as if the stressful experience were actually happening again?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Feeling very upset when something reminded you of the stressful experience?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Having strong physical reactions when something reminded you of the stressful experience?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Avoiding memories, thoughts, or feelings related to the stressful experience?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Avoiding external reminders of the stressful experience?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Trouble remembering important parts of the stressful experience?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "Having strong negative beliefs about yourself, other people, or the world?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "Blaming yourself or someone else for the stressful experience or what happened after it?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "text": "Having strong negative feelings such as fear, horror, anger, guilt, or shame?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "text": "Loss of interest in activities that you used to enjoy?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "text": "Feeling distant or cut off from other people?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "text": "Trouble experiencing positive feelings?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "text": "Irritable behavior, angry outbursts, or acting aggressively?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "text": "Taking too many risks or doing things that could cause you harm?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "text": "Being \u201csuperalert\u201d or watchful or on guard?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "text": "Feeling jumpy or easily startled?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "text": "Having difficulty concentrating?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "text": "Trouble falling or staying asleep?",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "A little",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "A lot",
+          "value": 3
+        },
+        {
+          "label": "Extremely",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "total_range": [
+      0,
+      80
+    ],
+    "interpretation": []
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "title": "PHQ-4",
+  "instructions": "Over the last 2 weeks, how often have you been bothered by the following problems?",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Feeling nervous, anxious or on edge",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Not being able to stop or control worrying",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Little interest or pleasure in doing things",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Feeling down, depressed or hopeless",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Several days",
+          "value": 1
+        },
+        {
+          "label": "More than half the days",
+          "value": 2
+        },
+        {
+          "label": "Nearly every day",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "total_range": [
+      0,
+      12
+    ],
+    "interpretation": [
+      {
+        "min": 0,
+        "max": 2,
+        "label": "None"
+      },
+      {
+        "min": 3,
+        "max": 5,
+        "label": "Mild"
+      },
+      {
+        "min": 6,
+        "max": 8,
+        "label": "Moderate"
+      },
+      {
+        "min": 9,
+        "max": 12,
+        "label": "Severe"
+      }
+    ]
+  }
+}
