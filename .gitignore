@@ -1,5 +1,12 @@
-**/.cache
-**/.cache/
-**/*.cache
-**/__pycache__/
-**/__pycache__/*
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Cache / local DB files
+*.sqlite
+*.db
+*.cache
+
+# Virtual envs
+.venv/
+venv/
