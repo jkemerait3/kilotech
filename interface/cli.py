@@ -2,6 +2,10 @@ import os
 import csv
 import json
 import ast
+import openmeteo_requests
+import requests_cache
+from retry_requests import retry
+import pandas as pd
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
@@ -84,18 +88,52 @@ def get_patient_info():
     dob = input("Please enter your date of birth (MM/DD/YYYY): ")
     return first_name, last_name, dob
 
-def get_self_report():
-    print("\nPlease describe what brings you in today (your symptoms and concerns):")
-    return input("> ")
+# Uses the Free Weather API to get current weather based on a list of coordinates
+def get_current_weather(coordinates: list[tuple[float, float]], location_names: list[str]) -> str:
+    # Setup the Open-Meteo API client with cache and retry on error
+    cache_session = requests_cache.CachedSession('.cache', expire_after = 3600)
+    retry_session = retry(cache_session, retries = 5, backoff_factor = 0.2)
+    openmeteo = openmeteo_requests.Client(session = retry_session)
 
-def generate_csv_output(patient_info, self_report, assessment_summary, results, filename="output/results.csv"):
+    # Make sure all required weather variables are listed here
+    # The order of variables in hourly or daily is important to assign them correctly below
+    url = "https://api.open-meteo.com/v1/forecast"
+    params = {
+        "latitude": [coord[0] for coord in coordinates],
+        "longitude": [coord[1] for coord in coordinates],
+        "models": "gfs_seamless",
+        "current": ["temperature_2m", "relative_humidity_2m", "precipitation", "weather_code", "wind_speed_10m"],
+    }
+    responses = openmeteo.weather_api(url, params=params)
+
+    weather_summary = ""
+    for i, response in enumerate(responses):
+        location = location_names[i]
+        # Process current data. The order of variables needs to be the same as requested.
+        current = response.Current()
+        current_temperature_2m = current.Variables(0).Value()
+        current_relative_humidity_2m = current.Variables(1).Value()
+        current_precipitation = current.Variables(2).Value()
+        current_weather_code = current.Variables(3).Value()
+        current_wind_speed_10m = current.Variables(4).Value()
+
+        weather_summary += (f"At {location}, the current temperature is {current_temperature_2m}°C, "
+                            f"humidity is {current_relative_humidity_2m}%, "
+                            f"precipitation is {current_precipitation}mm, "
+                            f"weather code is {current_weather_code}, "
+                            f"and wind speed is {current_wind_speed_10m}km/h.\n")
+    
+    return weather_summary.strip()
+
+
+def generate_csv_output(patient_info, current_weather, assessment_summary, results, filename="output/results.csv"):
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w", newline='', encoding="utf-8") as f:
         writer = csv.writer(f)
         metadata_row = [
             f"{patient_info[0]} {patient_info[1]}",
             patient_info[2],
-            self_report,
+            current_weather,
             assessment_summary
         ]
         writer.writerow(metadata_row)
@@ -122,7 +160,7 @@ def run_cli():
 
     # ---- intake ----
     patient_info = get_patient_info()
-    self_report = get_self_report()
+    current_weather = get_current_weather([(33.775677, -84.388098), (21.127729, -156.837094)], ["Coda", "Molokaʻi Forest Reserve"])
 
     # ---- PHQ-4 always first ----
     print("\nThank you for sharing this with me. I will now administer PHQ-4, a brief assessment, to better understand your experience.")
@@ -131,7 +169,7 @@ def run_cli():
 
     # ---- RETRIEVE RELEVANT CONTEXT ----
     context_query = (
-        "Patient self-report: " + self_report + "\n"
+        "Patient self-report: " + current_weather + "\n"
         + "PHQ-4 total score: " + str(phq4_result.get('total_score', 'N/A')) + "\n"
         + "PHQ-4 question scores: " + str(phq4_result.get('question_scores', []))
     )
@@ -152,8 +190,8 @@ def run_cli():
         f"{context_text}\n\n"
         "--- Inventories (JSON filenames) ---\n"
         f"{available_files}\n\n"
-        "--- Patient self-report ---\n"
-        f"{self_report}\n\n"
+        "--- Current weather ---\n"
+        f"{current_weather}\n\n"
         f"PHQ-4 total: {phq4_result.get('total_score', 'N/A')}, Question scores: {phq4_result.get('question_scores', [])}\n"
         "Reply ONLY with a single valid Python list containing only valid filenames with ABSOLUTELY NO additional commentary. For example, ['file1.json', 'file2.json']"
     )
@@ -191,7 +229,7 @@ def run_cli():
 
     # ---- Retrieve context for summary as well ----
     summary_context = retriever.retrieve(
-        self_report,
+        current_weather,
         top_n=RETRIEVAL_TOP_N,
         max_total_chars=MAX_TOTAL_CHARS_CONTEXT
     )
@@ -205,7 +243,7 @@ def run_cli():
         "--- Clinical Context ---\n"
         f"{summary_context_text}\n\n"
         "--- Self-report ---\n"
-        f"{self_report}\n\n"
+        f"{current_weather}\n\n"
         "--- Inventory scores summary ---\n"
         f"{[{r['name']: r['total_score']} for r in results]}"
     )
@@ -214,7 +252,8 @@ def run_cli():
     # print(diagnostic_impression)
 
     filename = generate_output_filename(patient_info[0], patient_info[1], patient_info[2])
-    generate_csv_output(patient_info, self_report, diagnostic_impression, results, filename)
+    generate_csv_output(patient_info, current_weather, diagnostic_impression, results, filename)
 
 if __name__ == "__main__":
-    run_cli()
+    #run_cli()
+    print(get_current_weather([(33.775677, -84.388098)], ["Coda"]))
