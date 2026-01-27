@@ -1,3 +1,5 @@
 **/.cache
 **/.cache/
 **/*.cache
+**/__pycache__/
+**/__pycache__/*
