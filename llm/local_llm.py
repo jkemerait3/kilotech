@@ -1,6 +1,6 @@
 import subprocess
 
-OLLAMA_PATH = r"C:\Users\12294\AppData\Local\Programs\Ollama"
+OLLAMA_PATH = r"C:\Users\12294\AppData\Local\Programs\Ollama\ollama.exe"
 MODEL_NAME = 'phi'
 
 def query_llm(prompt: str) -> str:
