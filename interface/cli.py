@@ -29,21 +29,25 @@ class SemanticRetriever:
         all_chunks = []
         sources = []
         for folder in self.folders:
-            for filename in sorted(os.listdir(folder)):
-                if filename.endswith('.jsonl'):
-                    path = os.path.join(folder, filename)
-                    with open(path, 'r', encoding='utf-8') as f:
-                        for ix, line in enumerate(f):
-                            try:
-                                obj = json.loads(line)
-                                text = obj.get("text", "")
-                                if text and isinstance(text, str):
-                                    all_chunks.append(text.strip())
-                                    sources.append((filename, ix))
-                                if len(all_chunks) >= max_chunks:
-                                    break
-                            except Exception:
-                                continue
+            # Walk through all subdirectories recursively
+            for root, dirs, files in os.walk(folder):
+                for filename in sorted(files):
+                    if filename.endswith('.jsonl'):
+                        path = os.path.join(root, filename)
+                        with open(path, 'r', encoding='utf-8') as f:
+                            for ix, line in enumerate(f):
+                                try:
+                                    obj = json.loads(line)
+                                    text = obj.get("text", "")
+                                    if text and isinstance(text, str):
+                                        all_chunks.append(text.strip())
+                                        sources.append((filename, ix))
+                                    if len(all_chunks) >= max_chunks:
+                                        break
+                                except Exception:
+                                    continue
+                    if len(all_chunks) >= max_chunks:
+                        break
                 if len(all_chunks) >= max_chunks:
                     break
             if len(all_chunks) >= max_chunks:
@@ -82,10 +86,9 @@ def get_user_query():
 # ==== MAIN INTERACTIVE FLOW ====
 def run_cli():
     # ---- Set up retriever at session start ----
-    dsm5_folder = "Data/dsm5_chunks/"
-    dataset_folder = "Data/dataset_chunks/"
+    Hawaiian_Literature_Folder = 'data/hawaiian_chunks'
     retriever = SemanticRetriever(
-        [dsm5_folder, dataset_folder],
+        [Hawaiian_Literature_Folder],
         max_chunks=RETRIEVER_MAX_CHUNKS
     )
 

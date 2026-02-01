@@ -1,6 +1,14 @@
 import subprocess
+import platform
 
-OLLAMA_PATH = r"C:\Users\12294\AppData\Local\Programs\Ollama\ollama.exe"
+# Set Ollama path based on OS
+if platform.system() == 'Darwin':  # macOS
+    OLLAMA_PATH = '/usr/local/bin/ollama'
+elif platform.system() == 'Windows':
+    OLLAMA_PATH = r"C:\Users\12294\AppData\Local\Programs\Ollama\ollama.exe"
+else:  # Linux
+    OLLAMA_PATH = '/usr/local/bin/ollama'
+
 MODEL_NAME = 'phi'
 
 def query_llm(prompt: str) -> str:
