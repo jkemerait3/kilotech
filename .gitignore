@@ -1,2 +1,13 @@
-.venv/
 kilotech/.pio
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Cache / local DB files
+*.sqlite
+*.db
+*.cache
+
+# Virtual envs
+.venv/
+venv/
