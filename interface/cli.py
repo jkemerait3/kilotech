@@ -145,6 +145,8 @@ def run_cli():
     )
     summary_context_text = "\n\n".join(summary_context)
 
+    current_weather = get_current_weather([(21.4826362, -158.0170701)], ["Oahu"])
+
     summary_prompt = (
         "You are an expert in Hawaiian culture and agriculture assisting farmers. "
         "Based on the literature context, current weather, and the user's query, "
@@ -153,13 +155,13 @@ def run_cli():
         "--- Literature Context ---\n"
         f"{summary_context_text}\n\n"
         "--- Current Weather ---\n"
-        f"{get_current_weather([(33.775677, -84.388098)], ["Oahu"])}\n\n"
+        f"{current_weather}\n\n"
         "--- User Query ---\n"
         f"{user_query}\n\n"
     )
     answer = query_llm(summary_prompt)
+    print(current_weather)
     print(answer)
     
 if __name__ == "__main__":
-    #run_cli()
-    print(get_current_weather([(33.775677, -84.388098)], ["Coda"]))
+    run_cli()
