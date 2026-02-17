@@ -15,7 +15,7 @@ import os
 from dotenv import load_dotenv
 
 # Find the directory of your settings.py and load the .env file
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(os.path.join(BASE_DIR, '.env'))
 
 # Retrieve the secret key
@@ -25,7 +25,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['jkemerait3.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition

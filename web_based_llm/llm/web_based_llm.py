@@ -1,5 +1,8 @@
 import os
 from huggingface_hub import InferenceClient
+from dotenv import load_dotenv
+
+load_dotenv()  # This loads the variables from .env into os.environ
 
 # Choose a powerful instruction-tuned model
 MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"

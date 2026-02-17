@@ -4,4 +4,4 @@
 3. Navigate to the project directory and run the project in CLI with "python main.py"
 
 # Note
-To change between local and web-based LLM access in Django, simply import the "query_llm" method from the desired file in \web_based_llm\views.py
+To change between local and web-based LLM access in Django, simply import the "query_llm" method from the desired file in web_based_llm\advisor\views.py

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import QueryForm
 from retrieval import SemanticRetriever
-from llm.local_llm import query_llm
+from llm.web_based_llm import query_llm
 from utils import get_current_weather # Keep your weather logic
 import os
 from django.conf import settings
