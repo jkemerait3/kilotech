@@ -4,7 +4,6 @@ import ast
 import openmeteo_requests
 import requests_cache
 from retry_requests import retry
-import pandas as pd
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
