@@ -1,4 +1,4 @@
-kilotech/.pio
+local_llm/kilotech/.pio
 # Python bytecode
 __pycache__/
 *.py[cod]
@@ -13,3 +13,6 @@ __pycache__/
 venv/
 .env/
 env/
+*/.env
+
+token.txt
