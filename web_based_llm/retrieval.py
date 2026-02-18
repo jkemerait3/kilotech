@@ -6,8 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# We use the API URL for the model instead of loading it locally
-# This is the same model as previously, just hosted remotely.
+# API URL
 API_URL = "https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/all-MiniLM-L6-v2"
 
 class SemanticRetriever:
@@ -17,8 +16,13 @@ class SemanticRetriever:
         self.chunks = []
         self.embeddings = None
         
+        # Ensure token exists
+        token = os.environ.get('HUGGINGFACE_TOKEN')
+        if not token:
+            print("WARNING: HUGGINGFACE_TOKEN not found in environment variables.")
+        
         self.headers = {
-            "Authorization": f"Bearer {os.environ.get('HUGGINGFACE_TOKEN')}"
+            "Authorization": f"Bearer {token}"
         }
         
         self._load_and_embed()
@@ -34,9 +38,28 @@ class SemanticRetriever:
                 headers=self.headers, 
                 json={"inputs": texts, "options": {"wait_for_model": True}}
             )
-            return np.array(response.json())
+            
+            # 1. Check for HTTP Errors
+            if response.status_code != 200:
+                print(f"API Error {response.status_code}: {response.text}")
+                return np.array([])
+            
+            data = response.json()
+            
+            # 2. Check if API returned a specific error dictionary
+            if isinstance(data, dict) and "error" in data:
+                print(f"API Error Message: {data['error']}")
+                return np.array([])
+
+            # 3. Check if data is actually a list (success)
+            if not isinstance(data, list):
+                print(f"Unexpected API response format: {type(data)}")
+                return np.array([])
+                
+            return np.array(data)
+            
         except Exception as e:
-            print(f"Embedding API Error: {e}")
+            print(f"Embedding API Connection Error: {e}")
             return np.array([])
 
     def _load_and_embed(self):
@@ -53,7 +76,6 @@ class SemanticRetriever:
                                 for line in f:
                                     if len(all_chunks) >= self.max_chunks:
                                         break
-                                        
                                     try:
                                         obj = json.loads(line)
                                         text = obj.get("text") or obj.get("body") or ""
@@ -63,7 +85,6 @@ class SemanticRetriever:
                                         continue
                         except Exception:
                             continue
-                            
                     if len(all_chunks) >= self.max_chunks:
                         break
             if len(all_chunks) >= self.max_chunks:
@@ -73,31 +94,38 @@ class SemanticRetriever:
 
         # 2. Get Embeddings from API
         if self.chunks:
-            # The API is efficient, but let's batch if > 50 to be safe
             self.embeddings = self._query_api(self.chunks)
         else:
             self.embeddings = np.array([])
 
     def retrieve(self, query, top_n=4):
-        if len(self.chunks) == 0 or self.embeddings.size == 0:
+        # Safety checks
+        if len(self.chunks) == 0:
             return []
+        
+        if self.embeddings.size == 0:
+            # Try to load embeddings one last time if they failed during init
+            print("Embeddings were empty, retrying...")
+            self.embeddings = self._query_api(self.chunks)
+            if self.embeddings.size == 0:
+                return []
 
-        # 1. Embed the query using the same API
+        # 1. Embed the query
         query_emb = self._query_api([query])
         
-        # Safety check if API failed
+        # Safety check if query embedding failed
         if query_emb.size == 0:
             return []
             
-        # Flatten query to (384,)
-        query_emb = query_emb[0] 
+        # Flatten query to (384,) if it's (1, 384)
+        if query_emb.ndim == 2:
+            query_emb = query_emb[0] 
 
-        # 2. Calculate Similarity (Dot Product)
-        # Ensure embeddings are a numpy array of floats
+        # 2. Calculate Similarity
         try:
             scores = np.dot(self.embeddings, query_emb)
         except Exception as e:
-            print(f"Math Error: {e}")
+            print(f"Math Error (Shape Mismatch?): {e}")
             return []
 
         # 3. Sort and Retrieve
