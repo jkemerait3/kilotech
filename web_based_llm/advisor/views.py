@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from .forms import QueryForm
-from retrieval import SemanticRetriever
 from llm.web_based_llm import query_llm
 from utils import get_current_weather # Keep your weather logic
 import os
@@ -8,9 +7,6 @@ from django.conf import settings
 
 # Construct the absolute path to your data
 data_path = os.path.join(settings.BASE_DIR, 'data', 'hawaiian_chunks')
-
-# Initialize with the absolute path
-retriever = SemanticRetriever([data_path])
 
 def advisor_home(request):
     # 1. Retrieve data saved from a previous POST/Redirect
@@ -26,6 +22,10 @@ def advisor_home(request):
             user_query = form.cleaned_data['query']
             
             # Retrieve Context
+            from retrieval import SemanticRetriever
+
+            retriever = SemanticRetriever([data_path])
+
             context_chunks = retriever.retrieve(user_query)
             context_text = "\n\n".join(context_chunks)
             
