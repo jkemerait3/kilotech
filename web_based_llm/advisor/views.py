@@ -1,34 +1,34 @@
 from django.shortcuts import render, redirect
 from .forms import QueryForm
-from utils import get_current_weather # Keep your weather logic
+from utils import get_current_weather 
 import os
 from django.conf import settings
 
 # Construct the absolute path to your data
 data_path = os.path.join(settings.BASE_DIR, 'data', 'hawaiian_chunks')
 
-retriever = None
-
 def advisor_home(request):
-
-    from llm.web_based_llm import query_llm
-    from retrieval import SemanticRetriever
-
     # 1. Retrieve data saved from a previous POST/Redirect
     answer = request.session.pop('answer', None) 
     weather = request.session.pop('weather', None)
     
-    # 2. Always provide a fresh, empty form for GET requests (clears the box on refresh)
+    # 2. Always provide a fresh, empty form for GET requests
     form = QueryForm()
     
     if request.method == 'POST':
         form = QueryForm(request.POST)
         if form.is_valid():
+            # --- MOVED IMPORTS DEEPER ---
+            # Now these only run when the user actually submits a query.
+            # The homepage will load instantly.
+            from llm.web_based_llm import query_llm
+            from retrieval import SemanticRetriever
+            # -----------------------------
+
             user_query = form.cleaned_data['query']
             
             # Retrieve Context
             retriever = SemanticRetriever([data_path])
-
             context_chunks = retriever.retrieve(user_query)
             context_text = "\n\n".join(context_chunks)
             
@@ -52,12 +52,10 @@ def advisor_home(request):
             # Query LLM
             generated_answer = query_llm(prompt)
             
-            # SAVE TO SESSION AND REDIRECT (The PRG Pattern)
+            # SAVE TO SESSION AND REDIRECT
             request.session['answer'] = generated_answer
             request.session['weather'] = current_weather
             
-            # Redirect to the same view using its URL name. 
-            # *Note: Ensure 'advisor_home' matches the name= attribute in your urls.py*
             return redirect('advisor_home')
 
     # 3. Render the page
