@@ -1,7 +1,5 @@
 from django.shortcuts import render, redirect
 from .forms import QueryForm
-from llm.web_based_llm import query_llm
-from retrieval import SemanticRetriever
 from utils import get_current_weather # Keep your weather logic
 import os
 from django.conf import settings
@@ -12,6 +10,10 @@ data_path = os.path.join(settings.BASE_DIR, 'data', 'hawaiian_chunks')
 retriever = None
 
 def advisor_home(request):
+
+    from llm.web_based_llm import query_llm
+    from retrieval import SemanticRetriever
+
     # 1. Retrieve data saved from a previous POST/Redirect
     answer = request.session.pop('answer', None) 
     weather = request.session.pop('weather', None)
