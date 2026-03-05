@@ -1,74 +1,19 @@
 import os
-import json
-import numpy as np
-from sentence_transformers import SentenceTransformer
 
 from llm.local_llm import query_llm
 from utils import load_inventory, administer_inventory, generate_output_filename
+from retrieval import SemanticRetriever
 
 # ==== RETRIEVAL/CONTEXT CONTROL VARIABLES ====
 # --------------------------------------------------------------
 # >>> TUNE THESE FOR EACH LLM TESTED <<<
 MAX_TOTAL_CHARS_CONTEXT = 1800   # per context injection
 RETRIEVAL_TOP_N = 6             # How many top relevant chunks to inject each time
-RETRIEVER_MODEL = "all-MiniLM-L6-v2"   # can upgrade for larger LLMs
 RETRIEVER_MAX_CHUNKS = 600      # higher for lots of data
 # --------------------------------------------------------------
 
-
-class SemanticRetriever:
-    def __init__(self, folders, max_chunks=600, embed_model=RETRIEVER_MODEL):
-        self.folders = folders
-        self.model = SentenceTransformer(embed_model)
-        self.chunks = []
-        self.chunk_sources = []
-        self.embeddings = None
-        self._index_chunks(max_chunks)
-
-    def _index_chunks(self, max_chunks):
-        all_chunks = []
-        sources = []
-        for folder in self.folders:
-            # Walk through all subdirectories recursively
-            for root, dirs, files in os.walk(folder):
-                for filename in sorted(files):
-                    if filename.endswith('.jsonl'):
-                        path = os.path.join(root, filename)
-                        with open(path, 'r', encoding='utf-8') as f:
-                            for ix, line in enumerate(f):
-                                try:
-                                    obj = json.loads(line)
-                                    text = obj.get("text", "")
-                                    if text and isinstance(text, str):
-                                        all_chunks.append(text.strip())
-                                        sources.append((filename, ix))
-                                    if len(all_chunks) >= max_chunks:
-                                        break
-                                except Exception:
-                                    continue
-                    if len(all_chunks) >= max_chunks:
-                        break
-                if len(all_chunks) >= max_chunks:
-                    break
-            if len(all_chunks) >= max_chunks:
-                break
-        self.chunks = all_chunks
-        self.chunk_sources = sources
-        self.embeddings = self.model.encode(self.chunks, show_progress_bar=False)
-
-    def retrieve(self, query, top_n=RETRIEVAL_TOP_N, max_total_chars=MAX_TOTAL_CHARS_CONTEXT):
-        q_emb = self.model.encode([query])[0]
-        sims = np.inner(self.embeddings, q_emb)
-        top_ids = np.argsort(sims)[::-1][:top_n]
-        results = []
-        chars = 0
-        for idx in top_ids:
-            chunk = self.chunks[idx]
-            if chars + len(chunk) > max_total_chars:
-                break
-            results.append(chunk)
-            chars += len(chunk)
-        return results
+# note: SemanticRetriever is defined in retrieval.py with sensible defaults
+# the class here used to duplicate that logic; we now import and re-use it
 
 # ==== FILE UTILS ====
 def list_json_files(folder_path, exclude=None):
@@ -86,11 +31,15 @@ def get_user_query():
 # ==== MAIN INTERACTIVE FLOW ====
 def run_cli():
     # ---- Set up retriever at session start ----
-    Hawaiian_Literature_Folder = 'data/hawaiian_chunks'
+    # path is case-sensitive; the data directory in the repo is "Data" not "data"
+    Hawaiian_Literature_Folder = 'Data/hawaiian_chunks'
     retriever = SemanticRetriever(
         [Hawaiian_Literature_Folder],
         max_chunks=RETRIEVER_MAX_CHUNKS
     )
+    # ensure we actually loaded some chunks
+    if not retriever.chunks:
+        raise RuntimeError(f"no chunks found in {Hawaiian_Literature_Folder}, check path and JSONL files")
 
     # ---- original user query ----
     user_query = get_user_query()

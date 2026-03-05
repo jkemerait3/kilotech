@@ -19,19 +19,23 @@ class SemanticRetriever:
         all_chunks = []
         sources = []
         for folder in self.folders:
-            for filename in sorted(os.listdir(folder)):
-                if filename.endswith('.jsonl'):
-                    path = os.path.join(folder, filename)
-                    with open(path, 'r', encoding='utf-8') as f:
-                        for ix, line in enumerate(f):
-                            obj = json.loads(line)
-                            text = obj.get("text") or obj.get("body") or ""
-                            text = text.strip()
-                            if text:
-                                all_chunks.append(text)
-                                sources.append((filename, ix))
+            # recursively walk folder tree so subdirectories are included
+            for root, dirs, files in os.walk(folder):
+                for filename in sorted(files):
+                    if filename.endswith('.jsonl'):
+                        path = os.path.join(root, filename)
+                        with open(path, 'r', encoding='utf-8') as f:
+                            for ix, line in enumerate(f):
+                                obj = json.loads(line)
+                                text = obj.get("text") or obj.get("body") or ""
+                                text = text.strip()
+                                if text:
+                                    all_chunks.append(text)
+                                    sources.append((path, ix))
                                 if len(all_chunks) >= max_chunks:
                                     break
+                    if len(all_chunks) >= max_chunks:
+                        break
                 if len(all_chunks) >= max_chunks:
                     break
             if len(all_chunks) >= max_chunks:
