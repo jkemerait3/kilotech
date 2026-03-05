@@ -1,0 +1,71 @@
+{
+  "num_queries": 8,
+  "avg_keyword_coverage": 0.18,
+  "avg_generation_rouge_f1": 0.19,
+  "per_query_results": [
+    {
+      "query_id": 1,
+      "query": "what is kalo",
+      "num_retrieved_chunks": 1,
+      "keyword_coverage": 0.0,
+      "generation_rouge_f1": 0.41,
+      "generated_answer": "Kalo is a type of taro root that is grown and harvested in Hawaii. It has been a staple crop in Hawaiian culture for centuries."
+    },
+    {
+      "query_id": 2,
+      "query": "how do hawaiians grow kalo",
+      "num_retrieved_chunks": 1,
+      "keyword_coverage": 0.14,
+      "generation_rouge_f1": 0.16,
+      "generated_answer": "Hawaiian people grew a variety of crops and gardens on the islands, including taro (Colocasia esculenta), which they called kalo. To grow kalo, Hawaiians would dig pits in the ground where the root wa..."
+    },
+    {
+      "query_id": 3,
+      "query": "what hawaiian plants are edible",
+      "num_retrieved_chunks": 1,
+      "keyword_coverage": 0.0,
+      "generation_rouge_f1": 0.05,
+      "generated_answer": "The plant described in the context above that is edible in Hawaiian Islands is guava."
+    },
+    {
+      "query_id": 4,
+      "query": "describe hawaiian agriculture",
+      "num_retrieved_chunks": 1,
+      "keyword_coverage": 0.14,
+      "generation_rouge_f1": 0.1,
+      "generated_answer": "Hawaiian agriculture is based on a range of crops grown in temperate climates that include wheat, barley, oats, maize, beets, turnips, mangel-wurzel, onions, potatoes and all sorts of vegetables. Addi..."
+    },
+    {
+      "query_id": 5,
+      "query": "what was the role of farmers in ancient hawaii",
+      "num_retrieved_chunks": 1,
+      "keyword_coverage": 0.14,
+      "generation_rouge_f1": 0.24,
+      "generated_answer": "Farmers played a vital role in ancient Hawai\u2018i's economy, society, and culture. They were responsible for cultivating crops such as taro, breadfruit, and sugarcane to provide food for their families a..."
+    },
+    {
+      "query_id": 6,
+      "query": "explain the hawaiian ahupua'a system",
+      "num_retrieved_chunks": 1,
+      "keyword_coverage": 0.75,
+      "generation_rouge_f1": 0.22,
+      "generated_answer": "The Hawaiian ahupua'a is a division of land that was used to manage resources and sustain life in Hawai\u2018i. It consists of smaller parcels of land within larger wedge-shaped pieces called ahupua'a, whi..."
+    },
+    {
+      "query_id": 7,
+      "query": "what challenges do hawaiian farmers face today",
+      "num_retrieved_chunks": 1,
+      "keyword_coverage": 0.29,
+      "generation_rouge_f1": 0.18,
+      "generated_answer": "The biggest challenge that Hawaiian farmers face today is climate change and its impact on their crops. Changes in temperature and precipitation patterns have led to more frequent droughts, floods, an..."
+    },
+    {
+      "query_id": 8,
+      "query": "how do native hawaiian plants contribute to ecosystem",
+      "num_retrieved_chunks": 1,
+      "keyword_coverage": 0.0,
+      "generation_rouge_f1": 0.18,
+      "generated_answer": "Native Hawaiian plants play a vital role in the local ecosystems by providing food and habitat for various species of animals and birds. For example, certain flowering trees produce nectar that is imp..."
+    }
+  ]
+}

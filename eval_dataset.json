@@ -1,0 +1,52 @@
+{
+  "eval_queries": [
+    {
+      "id": 1,
+      "query": "what is kalo",
+      "ideal_answer": "Kalo (taro) is a sacred Hawaiian plant and staple crop. It has a starchy edible corm and holds significant cultural importance in Hawaiian cuisine and tradition.",
+      "relevant_keywords": ["kalo", "taro", "sacred", "staple crop", "corm", "Hawaiian"]
+    },
+    {
+      "id": 2,
+      "query": "how do hawaiians grow kalo",
+      "ideal_answer": "Hawaiians traditionally grew kalo in lo'i kalo (taro patches) using flooded agricultural systems. They used natural irrigation from streams and cultivated the plants in paddies, harvesting the corms and leaves.",
+      "relevant_keywords": ["grow", "lo'i kalo", "flooded", "irrigation", "paddies", "corm", "leaves"]
+    },
+    {
+      "id": 3,
+      "query": "what hawaiian plants are edible",
+      "ideal_answer": "Many Hawaiian plants are edible, including kalo (taro), 'ulu (breadfruit), uala (sweet potato), and various native fruits and greens. These plants were important food sources for ancient Hawaiians.",
+      "relevant_keywords": ["edible", "kalo", "'ulu", "uala", "breadfruit", "sweet potato", "food", "native"]
+    },
+    {
+      "id": 4,
+      "query": "describe hawaiian agriculture",
+      "ideal_answer": "Traditional Hawaiian agriculture was sophisticated and sustainable, using layered cropping systems, fishponds, and water management. Farmers cultivated kalo in wet paddies, breadfruit in upland areas, and maintained diverse food forests.",
+      "relevant_keywords": ["agriculture", "cultivation", "water management", "sustainable", "crops", "lo'i", "fishponds"]
+    },
+    {
+      "id": 5,
+      "query": "what was the role of farmers in ancient hawaii",
+      "ideal_answer": "Farmers (mahi'ai) were essential to Hawaiian society, managing agricultural lands called 'ahupua'a that extended from mountains to ocean. They maintained food production for their communities and practiced careful environmental stewardship.",
+      "relevant_keywords": ["farmers", "mahi'ai", "ahupua'a", "agricultural", "food production", "community", "stewardship"]
+    },
+    {
+      "id": 6,
+      "query": "explain the hawaiian ahupua'a system",
+      "ideal_answer": "The 'ahupua'a was a land division system in ancient Hawaii extending from the mountains (mauka) to the ocean (makai). Each division included all resources needed for a community—forests, streams, agricultural lands, and coastal areas—ensuring sustainable resource management.",
+      "relevant_keywords": ["ahupua'a", "land division", "mountain", "ocean", "mauka", "makai", "resources", "sustainable"]
+    },
+    {
+      "id": 7,
+      "query": "what challenges do hawaiian farmers face today",
+      "ideal_answer": "Modern Hawaiian farmers face challenges from invasive species, water access issues, land availability, and climate change. Many are working to revive traditional practices and ensure food security for Hawaiian communities.",
+      "relevant_keywords": ["challenges", "invasive species", "water", "land", "climate", "traditional practices", "food security"]
+    },
+    {
+      "id": 8,
+      "query": "how do native hawaiian plants contribute to ecosystem",
+      "ideal_answer": "Native Hawaiian plants are adapted to local conditions and support the unique island ecosystem. They provide habitat for native birds, insects, and other wildlife, and their conservation is crucial for maintaining biodiversity.",
+      "relevant_keywords": ["native plants", "ecosystem", "adapted", "habitat", "wildlife", "conservation", "biodiversity"]
+    }
+  ]
+}

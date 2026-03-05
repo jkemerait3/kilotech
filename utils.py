@@ -52,3 +52,53 @@ def generate_output_filename(first_name, last_name, date_str):
 
 # Ensure output directory exists
 Path("output").mkdir(parents=True, exist_ok=True)
+
+# ==== EVALUATION METRICS ====
+def rouge_score(reference, candidate):
+    """
+    Simple ROUGE-1 (unigram) F1 score: overlap of words between reference and candidate.
+    Returns float 0.0–1.0.
+    """
+    ref_words = set(reference.lower().split())
+    cand_words = set(candidate.lower().split())
+    
+    if not ref_words or not cand_words:
+        return 0.0
+    
+    overlap = len(ref_words & cand_words)
+    precision = overlap / len(cand_words) if cand_words else 0.0
+    recall = overlap / len(ref_words) if ref_words else 0.0
+    
+    if precision + recall == 0:
+        return 0.0
+    f1 = 2 * (precision * recall) / (precision + recall)
+    return f1
+
+def retrieval_precision(retrieved_chunk_texts, relevant_chunk_texts):
+    """
+    Precision: of the chunks we retrieved, how many are in the relevant set?
+    Returns float 0.0–1.0.
+    """
+    if not retrieved_chunk_texts:
+        return 0.0
+    
+    # Normalize for comparison (lowercase, strip whitespace)
+    retrieved_norm = {txt.lower().strip() for txt in retrieved_chunk_texts}
+    relevant_norm = {txt.lower().strip() for txt in relevant_chunk_texts}
+    
+    overlap = len(retrieved_norm & relevant_norm)
+    return overlap / len(retrieved_norm)
+
+def retrieval_recall(retrieved_chunk_texts, relevant_chunk_texts):
+    """
+    Recall: of the relevant chunks, how many did we retrieve?
+    Returns float 0.0–1.0.
+    """
+    if not relevant_chunk_texts:
+        return 1.0  # No relevant chunks = perfect recall
+    
+    retrieved_norm = {txt.lower().strip() for txt in retrieved_chunk_texts}
+    relevant_norm = {txt.lower().strip() for txt in relevant_chunk_texts}
+    
+    overlap = len(retrieved_norm & relevant_norm)
+    return overlap / len(relevant_norm)
