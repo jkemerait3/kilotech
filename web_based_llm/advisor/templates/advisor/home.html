@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KiloTech</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    
+    <style>
+        /* Container for the loading state */
+        #loading-zone {
+            display: none;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        /* The plant animation */
+        .growing-plant {
+            font-size: 3rem;
+            display: inline-block;
+            /* Animation: 2 seconds total, infinite loop */
+            animation: plantStages 2s infinite;
+        }
+
+        /* This creates 4 distinct static stages.
+           The percentage ranges ensure the size "jumps" rather than transitions smoothly.
+        */
+        @keyframes plantStages {
+            0%, 24%   { transform: scale(0.5); } /* Stage 1: Small */
+            25%, 49%  { transform: scale(0.8); } /* Stage 2: Medium */
+            50%, 74%  { transform: scale(1.1); } /* Stage 3: Large */
+            75%, 99%  { transform: scale(1.4); } /* Stage 4: Largest */
+            100%      { transform: scale(0.5); } /* Revert to start */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to KiloTech!</h1>
+    
+    <form id="question-form" method="post" autocomplete="off">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" id="submit-btn">Submit Question</button>
+    </form>
+
+    <div id="loading-zone">
+        <div class="growing-plant">🌱</div>
+        <p>Response generating...</p>
+    </div>
+
+    {% if weather %}
+        <h3>Current Weather Status</h3>
+        <p>{{ weather }}</p>
+    {% endif %}
+
+    {% if answer %}
+        <h3>Recommendation</h3>
+        <div style="background: #000000; padding: 15px; border-radius: 8px;">
+            {{ answer|linebreaks }}
+        </div>
+    {% endif %}
+
+    <script>
+        document.getElementById('question-form').addEventListener('submit', function() {
+            const submitBtn = document.getElementById('submit-btn');
+            const loadingZone = document.getElementById('loading-zone');
+
+            // Disable button immediately to prevent double-clicks
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Sending...';
+
+            // Reveal the animation
+            loadingZone.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
