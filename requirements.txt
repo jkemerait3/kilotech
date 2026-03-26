@@ -5,6 +5,7 @@ python-dotenv
 requests
 numpy
 huggingface-hub
+sentence-transformers
 
 openmeteo_requests
 openmeteo_sdk

@@ -1,138 +1,68 @@
 import os
 import json
 import numpy as np
-import requests
-from dotenv import load_dotenv
+from sentence_transformers import SentenceTransformer
 
-load_dotenv()
-
-# API URL
-API_URL = "https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/all-MiniLM-L6-v2"
+# Choose a small, efficient model (see SBERT docs for alternatives)
+EMBED_MODEL = "all-MiniLM-L6-v2"
 
 class SemanticRetriever:
-    def __init__(self, folders, max_chunks=50):
+    def __init__(self, folders, max_chunks=300, embed_model=EMBED_MODEL):
         self.folders = folders
-        self.max_chunks = max_chunks
+        self.model = SentenceTransformer(embed_model)
         self.chunks = []
+        self.chunk_sources = []  # List of (file, index)
         self.embeddings = None
-        
-        # Ensure token exists
-        token = os.environ.get('HUGGINGFACE_TOKEN')
-        if not token:
-            print("WARNING: HUGGINGFACE_TOKEN not found in environment variables.")
-        
-        self.headers = {
-            "Authorization": f"Bearer {token}"
-        }
-        
-        self._load_and_embed()
+        self._index_chunks(max_chunks)
 
-    def _query_api(self, texts):
-        """
-        Sends text to Hugging Face to get embeddings.
-        Returns a numpy array of shape (n_texts, 384).
-        """
-        try:
-            response = requests.post(
-                API_URL, 
-                headers=self.headers, 
-                json={"inputs": texts, "options": {"wait_for_model": True}}
-            )
-            
-            # 1. Check for HTTP Errors
-            if response.status_code != 200:
-                print(f"API Error {response.status_code}: {response.text}")
-                return np.array([])
-            
-            data = response.json()
-            
-            # 2. Check if API returned a specific error dictionary
-            if isinstance(data, dict) and "error" in data:
-                print(f"API Error Message: {data['error']}")
-                return np.array([])
-
-            # 3. Check if data is actually a list (success)
-            if not isinstance(data, list):
-                print(f"Unexpected API response format: {type(data)}")
-                return np.array([])
-                
-            return np.array(data)
-            
-        except Exception as e:
-            print(f"Embedding API Connection Error: {e}")
-            return np.array([])
-
-    def _load_and_embed(self):
+    def _index_chunks(self, max_chunks):
         all_chunks = []
+        sources = []
         
-        # 1. Load Text from Files
         for folder in self.folders:
+            # Recursive search: looks in the folder AND all its subfolders
             for root, _, files in os.walk(folder):
                 for filename in sorted(files):
                     if filename.endswith('.jsonl'):
                         path = os.path.join(root, filename)
-                        try:
-                            with open(path, 'r', encoding='utf-8') as f:
-                                for line in f:
-                                    if len(all_chunks) >= self.max_chunks:
-                                        break
-                                    try:
-                                        obj = json.loads(line)
-                                        text = obj.get("text") or obj.get("body") or ""
-                                        if text.strip():
-                                            all_chunks.append(text.strip())
-                                    except json.JSONDecodeError:
-                                        continue
-                        except Exception:
-                            continue
+                        with open(path, 'r', encoding='utf-8') as f:
+                            for ix, line in enumerate(f):
+                                obj = json.loads(line)
+                                text = obj.get("text") or obj.get("body") or ""
+                                text = text.strip()
+                                if text:
+                                    all_chunks.append(text)
+                                    sources.append((filename, ix))
+                                if len(all_chunks) >= max_chunks:
+                                    break
                     if len(all_chunks) >= self.max_chunks:
                         break
             if len(all_chunks) >= self.max_chunks:
                 break
 
         self.chunks = all_chunks
+        self.chunk_sources = sources
 
-        # 2. Get Embeddings from API
         if self.chunks:
-            self.embeddings = self._query_api(self.chunks)
+            self.embeddings = self.model.encode(self.chunks, show_progress_bar=False)
         else:
             self.embeddings = np.array([])
 
-    def retrieve(self, query, top_n=4):
-        # Safety checks
-        if len(self.chunks) == 0:
-            return []
-        
-        if self.embeddings.size == 0:
-            # Try to load embeddings one last time if they failed during init
-            print("Embeddings were empty, retrying...")
-            self.embeddings = self._query_api(self.chunks)
-            if self.embeddings.size == 0:
-                return []
-
-        # 1. Embed the query
-        query_emb = self._query_api([query])
-        
-        # Safety check if query embedding failed
-        if query_emb.size == 0:
-            return []
-            
-        # Flatten query to (384,) if it's (1, 384)
-        if query_emb.ndim == 2:
-            query_emb = query_emb[0] 
-
-        # 2. Calculate Similarity
-        try:
-            scores = np.dot(self.embeddings, query_emb)
-        except Exception as e:
-            print(f"Math Error (Shape Mismatch?): {e}")
+    def retrieve(self, query, top_n=4, max_total_chars=4000):
+        if len(self.chunks) == 0 or self.embeddings.size == 0:
             return []
 
-        # 3. Sort and Retrieve
-        top_k_indices = np.argsort(scores)[::-1][:top_n]
-        
+        q_emb = self.model.encode([query], show_progress_bar=False)[0]
+        sims = np.inner(self.embeddings, q_emb)
+        top_k_indices = np.argsort(sims)[::-1][:top_n]
+
         results = []
+        chars = 0
         for idx in top_k_indices:
-            results.append(self.chunks[idx])
-            
+            chunk = self.chunks[idx]
+            if chars + len(chunk) > max_total_chars:
+                break
+            results.append(chunk)
+            chars += len(chunk)
+
         return results
