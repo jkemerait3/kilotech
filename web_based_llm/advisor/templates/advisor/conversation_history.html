@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation History - KiloTech</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+    <h1>Conversation History</h1>
+    <p><a href="{% url 'advisor_home' %}">Back to advisor</a></p>
+
+    {% if user.is_staff and user.id != history_owner.id %}
+        <p>Viewing history for: <strong>{{ history_owner.username }}</strong></p>
+    {% endif %}
+
+    {% if history_items %}
+        {% for item in history_items %}
+            <article>
+                <h3>{{ item.created_at }}</h3>
+                <p><strong>You:</strong> {{ item.user_query }}</p>
+                <p><strong>Assistant:</strong><br>{{ item.assistant_response|linebreaks }}</p>
+            </article>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No saved conversations yet.</p>
+    {% endif %}
+</body>
+</html>

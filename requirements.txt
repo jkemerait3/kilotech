@@ -6,6 +6,7 @@ requests
 numpy
 huggingface-hub
 sentence-transformers
+pypdf
 
 openmeteo_requests
 openmeteo_sdk

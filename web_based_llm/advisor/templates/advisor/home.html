@@ -7,6 +7,39 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     
     <style>
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border-bottom: 1px solid #d8d8d8;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .top-bar .left {
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .top-bar .right {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .top-bar .right form {
+            margin: 0;
+        }
+
+        .login-note {
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
         /* Container for the loading state */
         #loading-zone {
             display: none;
@@ -35,7 +68,30 @@
     </style>
 </head>
 <body>
+    <header class="top-bar">
+        <div class="left">KiloTech</div>
+        <div class="right">
+            {% if user.is_authenticated %}
+                <span>Signed in as <strong>{{ user.username }}</strong></span>
+                <a href="{% url 'conversation_history' %}">History</a>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit">Log out</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}">Log in</a>
+                <a href="{% url 'signup' %}">Create account</a>
+            {% endif %}
+        </div>
+    </header>
+
     <h1>Welcome to KiloTech!</h1>
+
+    {% if not user.is_authenticated %}
+        <p class="login-note">
+            You can ask questions while logged out, but conversation history and memory context are only available when logged in.
+        </p>
+    {% endif %}
     
     <form id="question-form" method="post" autocomplete="off">
         {% csrf_token %}
@@ -55,9 +111,22 @@
 
     {% if answer %}
         <h3>Recommendation</h3>
-        <div style="background: #000000; padding: 15px; border-radius: 8px;">
+        <div style="background: #000000; color: #ffffff; padding: 15px; border-radius: 8px; line-height: 1.5; white-space: normal;">
             {{ answer|linebreaks }}
         </div>
+    {% endif %}
+
+    {% if user.is_authenticated and recent_history %}
+        <h3>Your Recent Conversations</h3>
+        <ul>
+            {% for item in recent_history %}
+                <li>
+                    <strong>{{ item.created_at }}</strong><br>
+                    <strong>You:</strong> {{ item.user_query }}<br>
+                    <strong>Assistant:</strong> {{ item.assistant_response|truncatechars:220 }}
+                </li>
+            {% endfor %}
+        </ul>
     {% endif %}
 
     <script>
