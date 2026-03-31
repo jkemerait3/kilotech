@@ -1,4 +1,5 @@
 local_llm/kilotech/.pio
+DATABASE_UPGRADE_PLAN.md
 # Python bytecode
 __pycache__/
 *.py[cod]
