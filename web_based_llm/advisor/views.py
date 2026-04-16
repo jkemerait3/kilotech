@@ -7,6 +7,7 @@ from django.http import HttpResponseForbidden
 from .forms import LoginForm, QueryForm, SignUpForm
 from utils import get_current_weather 
 from .models import ConversationHistory
+import pandas as pd
 
 
 def _build_recent_conversation_context(user, limit=5):
@@ -58,6 +59,9 @@ def advisor_home(request):
                     for item in context_items
                 ]
             )
+
+            ## Get sensor data
+            sensor_data = pd.read_csv('eclipse_example_data.csv')
             
             # Get Weather
             current_weather = get_current_weather([(21.4826362, -158.0170701)], ["Oahu"])
@@ -69,13 +73,15 @@ def advisor_home(request):
 
             prompt = (
                 "You are an expert in Hawaiian culture and agriculture assisting farmers. "
-                "Based on the literature context, current weather, and the user's query, "
+                "Based on the literature context, current weather,local sensor data, and the user's query, "
                 "write a culturally informed, actionable response to their query. "
                 "Cite specific sources.\n\n"
                 "--- Literature Context ---\n"
                 f"{context_text}\n\n"
                 "--- Current Weather ---\n"
                 f"{current_weather}\n\n"
+                "--- Sensor Data ---\n"
+                f"{sensor_data.to_string()}\n\n"
             )
 
             if history_context:
