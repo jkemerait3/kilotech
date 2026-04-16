@@ -3,6 +3,7 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponseForbidden
+from pathlib import Path
 
 from .forms import LoginForm, QueryForm, SignUpForm
 from utils import get_current_weather 
@@ -22,6 +23,71 @@ def _build_recent_conversation_context(user, limit=5):
             for item in history_items
         ]
     )
+
+
+def _build_latest_sensor_snapshot(csv_path='eclipse_example_data.csv'):
+    # Keep only prompt-relevant columns and attach units for readability in the LLM context.
+    field_specs = [
+        ('deviceId', 'Device ID', 'string'),
+        ('sensortimestamp', 'Sensor timestamp', 'UTC ISO-8601'),
+        ('temperature', 'Internal temperature', 'deg C'),
+        ('humidity', 'Internal relative humidity', '% RH'),
+        ('externaltemperature', 'External temperature', 'deg C'),
+        ('externalhumidity', 'External relative humidity', '% RH'),
+        ('pressure', 'Barometric pressure', 'Pa'),
+        ('pm1', 'PM1 mass concentration', 'ug/m^3'),
+        ('pm25', 'PM2.5 mass concentration', 'ug/m^3'),
+        ('pm10', 'PM10 mass concentration', 'ug/m^3'),
+        ('Signal', 'Cell signal strength', 'dBm'),
+        ('VBat', 'Battery voltage', 'V'),
+        ('pctbat', 'Battery level', '%'),
+        ('gpslat', 'GPS latitude', 'decimal degrees'),
+        ('gpslong', 'GPS longitude', 'decimal degrees'),
+    ]
+
+    csv_path = Path(csv_path)
+    if not csv_path.is_absolute():
+        csv_path = Path(__file__).resolve().parent / csv_path
+
+    try:
+        sensor_df = pd.read_csv(csv_path)
+    except Exception:
+        return 'No sensor data available.'
+
+    if sensor_df.empty:
+        return 'No sensor data available.'
+
+    timestamp_col = 'sensortimestamp' if 'sensortimestamp' in sensor_df.columns else 'Timestamp'
+
+    if timestamp_col in sensor_df.columns:
+        parsed_ts = pd.to_datetime(sensor_df[timestamp_col], errors='coerce', utc=True)
+        if parsed_ts.notna().any():
+            latest_row = sensor_df.loc[parsed_ts.idxmax()]
+        else:
+            latest_row = sensor_df.iloc[-1]
+    else:
+        latest_row = sensor_df.iloc[-1]
+
+    lines = []
+    for column, label, unit in field_specs:
+        if column not in latest_row.index:
+            continue
+
+        value = latest_row[column]
+        if pd.isna(value) or value == '':
+            continue
+
+        if isinstance(value, float):
+            value_str = f'{value:.4f}'.rstrip('0').rstrip('.')
+        else:
+            value_str = str(value)
+
+        lines.append(f'- {label} ({unit}): {value_str}')
+
+    if not lines:
+        return 'No sensor data available.'
+
+    return 'Latest Eclipse sensor reading:\n' + '\n'.join(lines)
 
 def advisor_home(request):
     if not request.session.session_key:
@@ -60,8 +126,8 @@ def advisor_home(request):
                 ]
             )
 
-            ## Get sensor data
-            sensor_data = pd.read_csv('eclipse_example_data.csv')
+            ## Get latest sensor data snapshot
+            sensor_data = _build_latest_sensor_snapshot('eclipse_example_data.csv')
             
             # Get Weather
             current_weather = get_current_weather([(21.4826362, -158.0170701)], ["Oahu"])
@@ -73,15 +139,15 @@ def advisor_home(request):
 
             prompt = (
                 "You are an expert in Hawaiian culture and agriculture assisting farmers. "
-                "Based on the literature context, current weather,local sensor data, and the user's query, "
+                "Based on the literature context, current weather, local sensor data, and the user's query, "
                 "write a culturally informed, actionable response to their query. "
-                "Cite specific sources.\n\n"
+                "Include citations for all specific sources referenced at the end of your response.\n\n"
                 "--- Literature Context ---\n"
                 f"{context_text}\n\n"
                 "--- Current Weather ---\n"
                 f"{current_weather}\n\n"
                 "--- Sensor Data ---\n"
-                f"{sensor_data.to_string()}\n\n"
+                f"{sensor_data}\n\n"
             )
 
             if history_context:

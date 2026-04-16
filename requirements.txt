@@ -1,5 +1,10 @@
 gunicorn
 Django
+dj-database-url
+psycopg[binary]
+whitenoise
+
+pandas
 
 python-dotenv
 requests

@@ -4,6 +4,8 @@ DATABASE_UPGRADE_PLAN.md
 __pycache__/
 *.py[cod]
 
+.vscode/
+
 # Cache / local DB files
 *.sqlite
 *.sqlite3
