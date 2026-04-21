@@ -50,14 +50,47 @@ class RAGSourceAdmin(admin.ModelAdmin):
         if obj.uploaded_file:
             obj.source_size_bytes = obj.uploaded_file.size or 0
         super().save_model(request, obj, form, change)
-        schedule_ingest(obj.id)
-        self.message_user(request, "Source queued for background ingestion.", level=messages.INFO)
+        try:
+            schedule_ingest(obj.id)
+            obj.refresh_from_db()
+            status = obj.ingestion_status
+            if status == RAGSource.IngestionStatus.COMPLETED:
+                msg = f"✓ Ingestion completed: {obj.chunk_count} chunks created."
+                self.message_user(request, msg, level=messages.SUCCESS)
+            elif status == RAGSource.IngestionStatus.FAILED:
+                msg = f"✗ Ingestion failed: {obj.error_message}"
+                self.message_user(request, msg, level=messages.ERROR)
+            else:
+                self.message_user(request, f"Ingestion status: {status}", level=messages.INFO)
+        except Exception as exc:
+            obj.refresh_from_db()
+            msg = f"Ingestion error: {obj.error_message or str(exc)}"
+            self.message_user(request, msg, level=messages.ERROR)
 
     @admin.action(description="Reprocess selected RAG sources")
     def reprocess_sources(self, request, queryset):
+        success_count = 0
+        error_count = 0
         for source in queryset:
-            schedule_ingest(source.id)
-        self.message_user(request, f"Queued {queryset.count()} source(s) for background ingestion.", level=messages.INFO)
+            try:
+                schedule_ingest(source.id)
+                source.refresh_from_db()
+                if source.ingestion_status == RAGSource.IngestionStatus.COMPLETED:
+                    success_count += 1
+                else:
+                    error_count += 1
+            except Exception:
+                error_count += 1
+        
+        msg_parts = []
+        if success_count:
+            msg_parts.append(f"{success_count} source(s) completed")
+        if error_count:
+            msg_parts.append(f"{error_count} source(s) failed")
+        
+        msg = "; ".join(msg_parts) if msg_parts else "No sources processed."
+        level = messages.SUCCESS if error_count == 0 else messages.WARNING
+        self.message_user(request, msg, level=level)
 
     @admin.display(description="Source Size")
     def source_size_display(self, obj):

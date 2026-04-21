@@ -1,5 +1,5 @@
 import json
-from concurrent.futures import ThreadPoolExecutor
+import logging
 import importlib
 from pathlib import Path
 
@@ -10,8 +10,7 @@ from django.utils import timezone
 from .models import RAGChunk, RAGSource
 from retrieval import embed_texts
 
-
-_INGEST_EXECUTOR = ThreadPoolExecutor(max_workers=2, thread_name_prefix="rag-ingest")
+logger = logging.getLogger('advisor.rag_ingest')
 
 
 def _chunk_text(text, max_chars=1000, overlap=120):
@@ -68,24 +67,23 @@ def _read_source_texts(file_path):
     return [text], suffix.replace(".", "") or "unknown"
 
 
-def _run_ingest_job(source_id):
+def schedule_ingest(source_id):
+    """Ingest synchronously and log all steps."""
+    logger.info(f"Starting ingestion for RAGSource id={source_id}")
     close_old_connections()
     try:
         ingest_source(source_id)
+        logger.info(f"Completed ingestion for RAGSource id={source_id}")
+    except Exception as exc:
+        logger.exception(f"Failed to ingest RAGSource id={source_id}: {exc}")
+        raise
     finally:
         close_old_connections()
 
 
-def schedule_ingest(source_id):
-    RAGSource.objects.filter(pk=source_id).update(
-        ingestion_status=RAGSource.IngestionStatus.QUEUED,
-        error_message="",
-    )
-    _INGEST_EXECUTOR.submit(_run_ingest_job, source_id)
-
-
 def ingest_source(source_id):
     source = RAGSource.objects.get(pk=source_id)
+    logger.info(f"Ingesting: {source.title} (id={source.id}, type={source.source_type})")
 
     source.chunks.all().delete()
     source.ingestion_status = RAGSource.IngestionStatus.PROCESSING
@@ -96,15 +94,20 @@ def ingest_source(source_id):
 
     try:
         file_path = Path(source.uploaded_file.path)
+        logger.debug(f"File path: {file_path}")
         source.source_size_bytes = file_path.stat().st_size if file_path.exists() else 0
         source.save(update_fields=["source_size_bytes"])
+        logger.debug(f"Reading source texts from {file_path.suffix} file")
         source_texts, source_type = _read_source_texts(file_path)
+        logger.debug(f"Read {len(source_texts)} text segment(s) from source")
 
         chunk_texts = []
         for text in source_texts:
             chunk_texts.extend(_chunk_text(text))
+        logger.info(f"Created {len(chunk_texts)} chunks from source")
 
         if not chunk_texts:
+            logger.warning(f"No valid text content found in uploaded file for source id={source_id}")
             source.ingestion_status = RAGSource.IngestionStatus.FAILED
             source.error_message = "No valid text content found in uploaded file."
             source.source_type = source_type
@@ -112,7 +115,9 @@ def ingest_source(source_id):
             source.save(update_fields=["ingestion_status", "error_message", "source_type", "processed_at"])
             return
 
+        logger.debug(f"Embedding {len(chunk_texts)} chunks...")
         vectors = embed_texts(chunk_texts)
+        logger.debug(f"Generated embeddings with shape {vectors.shape}")
 
         chunk_rows = []
         for idx, (chunk_text, vector) in enumerate(zip(chunk_texts, vectors)):
@@ -128,6 +133,7 @@ def ingest_source(source_id):
             )
 
         with transaction.atomic():
+            logger.debug(f"Bulk creating {len(chunk_rows)} RAGChunk records")
             RAGChunk.objects.bulk_create(chunk_rows, batch_size=500)
             source.source_type = source_type
             source.ingestion_status = RAGSource.IngestionStatus.COMPLETED
@@ -135,10 +141,24 @@ def ingest_source(source_id):
             source.processed_at = timezone.now()
             source.error_message = ""
             source.save(update_fields=["source_type", "ingestion_status", "chunk_count", "processed_at", "error_message"])
+        logger.info(f"Successfully completed ingestion: {source.chunk_count} chunks created")
 
     except Exception as exc:
+        error_msg = str(exc)
+        logger.error(f"Ingestion failed for source id={source_id}: {error_msg}")
         source.ingestion_status = RAGSource.IngestionStatus.FAILED
-        source.error_message = str(exc)
+        source.error_message = error_msg
         source.processed_at = timezone.now()
         source.save(update_fields=["ingestion_status", "error_message", "processed_at"])
         raise
+
+
+def _warmup_embedding_model():
+    """Pre-download and cache the embedding model to avoid timeout on first ingest."""
+    try:
+        logger.info("Pre-warming embedding model...")
+        from retrieval import _get_model
+        _get_model()  # Lazy-loads and caches the model
+        logger.info("Embedding model pre-warmed successfully")
+    except Exception as exc:
+        logger.warning(f"Failed to pre-warm embedding model: {exc}. First ingestion may be slow.")
