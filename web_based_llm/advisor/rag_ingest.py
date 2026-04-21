@@ -3,7 +3,6 @@ import logging
 import importlib
 from pathlib import Path
 
-from django.db import close_old_connections
 from django.db import transaction
 from django.utils import timezone
 
@@ -70,15 +69,12 @@ def _read_source_texts(file_path):
 def schedule_ingest(source_id):
     """Ingest synchronously and log all steps."""
     logger.info(f"Starting ingestion for RAGSource id={source_id}")
-    close_old_connections()
     try:
         ingest_source(source_id)
         logger.info(f"Completed ingestion for RAGSource id={source_id}")
     except Exception as exc:
         logger.exception(f"Failed to ingest RAGSource id={source_id}: {exc}")
         raise
-    finally:
-        close_old_connections()
 
 
 def ingest_source(source_id):

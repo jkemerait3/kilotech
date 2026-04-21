@@ -52,7 +52,15 @@ class RAGSourceAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
         try:
             schedule_ingest(obj.id)
-            obj.refresh_from_db()
+            try:
+                obj.refresh_from_db()
+            except Exception:
+                self.message_user(
+                    request,
+                    "Ingestion ran, but status refresh failed. Reload this page to see latest status.",
+                    level=messages.WARNING,
+                )
+                return
             status = obj.ingestion_status
             if status == RAGSource.IngestionStatus.COMPLETED:
                 msg = f"✓ Ingestion completed: {obj.chunk_count} chunks created."
@@ -63,7 +71,6 @@ class RAGSourceAdmin(admin.ModelAdmin):
             else:
                 self.message_user(request, f"Ingestion status: {status}", level=messages.INFO)
         except Exception as exc:
-            obj.refresh_from_db()
             msg = f"Ingestion error: {obj.error_message or str(exc)}"
             self.message_user(request, msg, level=messages.ERROR)
 

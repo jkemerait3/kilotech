@@ -12,6 +12,7 @@ __pycache__/
 web_based_llm/db.sqlite3
 *.db
 *.cache
+logs.txt
 
 # Virtual envs
 .venv/

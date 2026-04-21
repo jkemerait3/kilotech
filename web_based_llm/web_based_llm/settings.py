@@ -91,9 +91,11 @@ WSGI_APPLICATION = 'web_based_llm.wsgi.application'
 
 DATABASE_URL = os.getenv('DATABASE_URL')
 if DATABASE_URL:
+    db_conn_max_age = int(os.getenv('DB_CONN_MAX_AGE', '60'))
     DATABASES = {
-        'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600, ssl_require=True)
+        'default': dj_database_url.parse(DATABASE_URL, conn_max_age=db_conn_max_age, ssl_require=True)
     }
+    DATABASES['default']['CONN_HEALTH_CHECKS'] = True
 else:
     sqlite_path = os.getenv('SQLITE_PATH', str(BASE_DIR / 'db.sqlite3'))
     DATABASES = {
