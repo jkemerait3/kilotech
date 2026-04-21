@@ -1,3 +1,8 @@
+import logging
+import os
+import tempfile
+from pathlib import Path
+
 import numpy as np
 from sentence_transformers import SentenceTransformer
 from functools import lru_cache
@@ -10,10 +15,56 @@ except Exception:
     pass
 
 EMBED_MODEL = "all-MiniLM-L6-v2"
+logger = logging.getLogger("advisor.retrieval")
+
+
+def _is_writable_dir(path_value):
+    try:
+        path = Path(path_value)
+        path.mkdir(parents=True, exist_ok=True)
+        probe = path / ".write_test"
+        probe.write_text("ok", encoding="utf-8")
+        probe.unlink(missing_ok=True)
+        return True
+    except Exception:
+        return False
+
+
+def _resolve_model_cache_dir():
+    candidates = []
+
+    for env_name in ("SENTENCE_TRANSFORMERS_HOME", "HF_HOME", "TRANSFORMERS_CACHE"):
+        env_value = os.getenv(env_name)
+        if env_value:
+            candidates.append(env_value)
+
+    candidates.extend(
+        [
+            "/var/data/hf/sentence-transformers",
+            "/tmp/hf/sentence-transformers",
+            str(Path(tempfile.gettempdir()) / "hf" / "sentence-transformers"),
+        ]
+    )
+
+    for candidate in candidates:
+        if _is_writable_dir(candidate):
+            # Keep libraries aligned on one writable root for downloads.
+            os.environ["SENTENCE_TRANSFORMERS_HOME"] = candidate
+            os.environ["HF_HOME"] = str(Path(candidate).parent)
+            os.environ["TRANSFORMERS_CACHE"] = str(Path(candidate).parent / "transformers")
+            return candidate
+
+    # Last resort: allow SentenceTransformer defaults.
+    logger.warning("No writable cache directory detected for embeddings; using library defaults.")
+    return None
 
 
 @lru_cache(maxsize=1)
 def _get_model(model_name=EMBED_MODEL):
+    cache_folder = _resolve_model_cache_dir()
+    if cache_folder:
+        logger.info(f"Loading embedding model from cache folder: {cache_folder}")
+        return SentenceTransformer(model_name, cache_folder=cache_folder)
     return SentenceTransformer(model_name)
 
 
